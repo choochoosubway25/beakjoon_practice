@@ -16,7 +16,6 @@ def count_prime(n: int) -> int:
     return sum(a)
 
 
-
 while True:
     n = int(input())
     if n == 0:
