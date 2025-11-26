@@ -1,7 +1,7 @@
 '''
 score_dict1 = {'A': 4.0, 'B': 3.0, 'C': 2.0, 'D': 1.0, 'F': 0.0}
 score_dict2 = {'+': 0.3, '0': 0.0, '-': -0.3}
-score = str(input())
+score = str(inputs())
 result = 0.0
 result += score_dict1[score[0]]
 if score[0] != 'F':
@@ -9,7 +9,7 @@ if score[0] != 'F':
 print('{0:0.1f}'.format(result))
 '''
 '''
-word = str(input())
+word = str(inputs())
 alphabets = [-1 for i in range(26)]
 length = len(word)
 for i in range(length):

@@ -10,7 +10,8 @@ while True:
 	    break
     else:
 		textline = A + B
-	    print(A + B)
+		print(A + B)
+
 textline.replace('$$', '$')
 textline.replace('\\', '$<br>')
 textline.replace('\begin{aligned}', '')
