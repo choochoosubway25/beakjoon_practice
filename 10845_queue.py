@@ -1,7 +1,7 @@
 import sys
 
 
-class IntStack:
+class IntQueue:
 
     def __init__(self):
         self.datas = list()
@@ -15,8 +15,8 @@ class IntStack:
         if self.sizes == 0:
             return -1
         else:
-            num = self.datas[-1]
-            self.datas = self.datas[:-1]
+            num = self.datas[0]
+            self.datas = self.datas[1:]
             self.sizes -= 1
             return num
 
@@ -29,7 +29,13 @@ class IntStack:
         else:
             return 0
 
-    def top(self):
+    def front(self):
+        if self.sizes == 0:
+            return -1
+        else:
+            return self.datas[0]
+
+    def back(self):
         if self.sizes == 0:
             return -1
         else:
@@ -37,8 +43,15 @@ class IntStack:
 
 
 num_iter = int(sys.stdin.readline())
-stacks = IntStack()
-command_dict = {'push': stacks.push, 'pop': stacks.pop, 'size': stacks.size, 'empty': stacks.empty, 'top': stacks.top}
+queues = IntQueue()
+command_dict = {
+    'push': queues.push,
+    'pop': queues.pop,
+    'size': queues.size,
+    'empty': queues.empty,
+    'front': queues.front,
+    'back': queues.back
+}
 for _ in range(num_iter):
     commands = list(map(str, (sys.stdin.readline().split())))
     command = commands[0]
